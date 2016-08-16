@@ -1,0 +1,6 @@
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\TaskManagerConsole\TaskManagerConsole\bin\Debug\TaskManagerConsole.exe.config
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\TaskManagerConsole\TaskManagerConsole\bin\Debug\TaskManagerConsole.exe
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\TaskManagerConsole\TaskManagerConsole\bin\Debug\TaskManagerConsole.pdb
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\TaskManagerConsole\TaskManagerConsole\obj\Debug\TaskManagerConsole.csprojResolveAssemblyReference.cache
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\TaskManagerConsole\TaskManagerConsole\obj\Debug\TaskManagerConsole.exe
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\TaskManagerConsole\TaskManagerConsole\obj\Debug\TaskManagerConsole.pdb
