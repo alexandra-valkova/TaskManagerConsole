@@ -6,7 +6,7 @@ namespace TaskManagerConsole.Repositories
 {
     public abstract class BaseRepository<T> where T : BaseEntity
     {
-        public virtual string filePath { get; set; }
+        public virtual string FilePath { get; set; }
 
         public BaseRepository()
         {
@@ -16,7 +16,7 @@ namespace TaskManagerConsole.Repositories
         {
             List<T> entities = new List<T>();
 
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)
@@ -31,7 +31,7 @@ namespace TaskManagerConsole.Repositories
 
         public virtual T GetByID(int id)
         {
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)
@@ -52,7 +52,7 @@ namespace TaskManagerConsole.Repositories
         {
             int id = 0;
 
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)
@@ -74,7 +74,7 @@ namespace TaskManagerConsole.Repositories
         {
             item.ID = GetNextID();
 
-            using (FileStream fs = new FileStream(filePath, FileMode.Append))
+            using (FileStream fs = new FileStream(FilePath, FileMode.Append))
             using (StreamWriter sw = new StreamWriter(fs))
             {
                 SaveEntity(item, sw);
@@ -83,9 +83,9 @@ namespace TaskManagerConsole.Repositories
 
         public void Edit(T item)
         {
-            string tempFile = "temp." + filePath;
+            string tempFile = "temp." + FilePath;
 
-            using (FileStream ifs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream ifs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(ifs))
             using (FileStream ofs = new FileStream(tempFile, FileMode.OpenOrCreate))
             using (StreamWriter sw = new StreamWriter(ofs))
@@ -106,15 +106,15 @@ namespace TaskManagerConsole.Repositories
                 }
             }
 
-            File.Delete(filePath);
-            File.Move(tempFile, filePath);
+            File.Delete(FilePath);
+            File.Move(tempFile, FilePath);
         }
 
         public void Delete(T item)
         {
-            string tempFile = "temp." + filePath;
+            string tempFile = "temp." + FilePath;
 
-            using (FileStream ifs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream ifs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(ifs))
             using (FileStream ofs = new FileStream(tempFile, FileMode.OpenOrCreate))
             using (StreamWriter sw = new StreamWriter(ofs))
@@ -130,8 +130,8 @@ namespace TaskManagerConsole.Repositories
                 }
             }
 
-            File.Delete(filePath);
-            File.Move(tempFile, filePath);
+            File.Delete(FilePath);
+            File.Move(tempFile, FilePath);
         }
 
         public void Save(T entity)

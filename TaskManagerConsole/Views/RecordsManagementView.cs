@@ -68,10 +68,11 @@ namespace TaskManagerConsole.Views
         {
             Console.Clear();
 
-            Record record = new Record();
-
-            record.TaskID = task.ID;
-            record.UserID = AuthenticationService.LoggedUser.ID;
+            Record record = new Record
+            {
+                TaskID = task.ID,
+                UserID = AuthenticationService.LoggedUser.ID
+            };
 
             Console.Write("Working Hours: ");
             record.WorkingHours = int.Parse(Console.ReadLine());

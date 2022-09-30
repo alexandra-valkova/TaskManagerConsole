@@ -8,11 +8,11 @@ namespace TaskManagerConsole.Repositories
 {
     public class TaskRepository : BaseRepository<Task>
     {
-        public override string filePath
+        public override string FilePath
         {
             get
             {
-                return base.filePath = "tasks.txt";
+                return base.FilePath = "tasks.txt";
             }
         }
 
@@ -22,17 +22,18 @@ namespace TaskManagerConsole.Repositories
 
         protected override Task GetEntity(StreamReader sr)
         {
-            Task task = new Task();
-
-            task.ID = int.Parse(sr.ReadLine());
-            task.Title = sr.ReadLine();
-            task.Description = sr.ReadLine();
-            task.WorkingHours = int.Parse(sr.ReadLine());
-            task.CreatorID = int.Parse(sr.ReadLine());
-            task.ResponsibleID = int.Parse(sr.ReadLine());
-            task.CreateDate = DateTime.Parse(sr.ReadLine());
-            task.LastEditDate = DateTime.Parse(sr.ReadLine());
-            task.Status = (StatusEnum)Enum.Parse(typeof(StatusEnum), sr.ReadLine());
+            Task task = new Task
+            {
+                ID = int.Parse(sr.ReadLine()),
+                Title = sr.ReadLine(),
+                Description = sr.ReadLine(),
+                WorkingHours = int.Parse(sr.ReadLine()),
+                CreatorID = int.Parse(sr.ReadLine()),
+                ResponsibleID = int.Parse(sr.ReadLine()),
+                CreateDate = DateTime.Parse(sr.ReadLine()),
+                LastEditDate = DateTime.Parse(sr.ReadLine()),
+                Status = (StatusEnum)Enum.Parse(typeof(StatusEnum), sr.ReadLine())
+            };
 
             return task;
         }
@@ -54,7 +55,7 @@ namespace TaskManagerConsole.Repositories
         {
             List<Task> tasks = new List<Task>();
 
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)
@@ -72,7 +73,7 @@ namespace TaskManagerConsole.Repositories
         }
         public override Task GetByID(int id)
         {
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)

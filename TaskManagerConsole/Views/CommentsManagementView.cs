@@ -66,10 +66,11 @@ namespace TaskManagerConsole.Views
         {
             Console.Clear();
 
-            Comment comment = new Comment();
-
-            comment.TaskID = task.ID;
-            comment.UserID = AuthenticationService.LoggedUser.ID;
+            Comment comment = new Comment
+            {
+                TaskID = task.ID,
+                UserID = AuthenticationService.LoggedUser.ID
+            };
 
             Console.Write("Text: ");
             comment.Text = Console.ReadLine();

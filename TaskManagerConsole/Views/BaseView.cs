@@ -8,7 +8,7 @@ namespace TaskManagerConsole.Views
 {
     public abstract class BaseView<T> where T : BaseEntity, new()
     {
-        public virtual T entity { get; set; }
+        public virtual T Entity { get; set; }
         
         public void Show()
         {
@@ -76,7 +76,7 @@ namespace TaskManagerConsole.Views
                 else
                 {
                     RenderEntity(entity);
-                    this.entity = entity;
+                    Entity = entity;
                     break;
                 } 
             }

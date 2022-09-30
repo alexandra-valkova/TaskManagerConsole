@@ -7,7 +7,7 @@ namespace TaskManagerConsole.Views
 {
     public class TasksManagementView : BaseView<Task>
     {
-        public override Task entity { get; set; }
+        public override Task Entity { get; set; }
 
         protected override BaseRepository<Task> GetRepo()
         {
@@ -83,7 +83,7 @@ namespace TaskManagerConsole.Views
         {
             base.View();
 
-            TasksDetailsView taskDetails = new TasksDetailsView(this.entity);
+            TasksDetailsView taskDetails = new TasksDetailsView(Entity);
             taskDetails.Show();
         }
     }

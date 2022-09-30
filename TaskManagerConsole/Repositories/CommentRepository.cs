@@ -7,11 +7,11 @@ namespace TaskManagerConsole.Repositories
 {
     class CommentRepository : BaseRepository<Comment>
     {
-        public override string filePath
+        public override string FilePath
         {
             get
             {
-                return base.filePath = "comments.txt";
+                return base.FilePath = "comments.txt";
             }
         }
 
@@ -21,13 +21,14 @@ namespace TaskManagerConsole.Repositories
 
         protected override Comment GetEntity(StreamReader sr)
         {
-            Comment comment = new Comment();
-
-            comment.ID = int.Parse(sr.ReadLine());
-            comment.TaskID = int.Parse(sr.ReadLine());
-            comment.UserID = int.Parse(sr.ReadLine());
-            comment.Text = sr.ReadLine();
-            comment.CreateDate = DateTime.Parse(sr.ReadLine());
+            Comment comment = new Comment
+            {
+                ID = int.Parse(sr.ReadLine()),
+                TaskID = int.Parse(sr.ReadLine()),
+                UserID = int.Parse(sr.ReadLine()),
+                Text = sr.ReadLine(),
+                CreateDate = DateTime.Parse(sr.ReadLine())
+            };
 
             return comment;
         }
@@ -45,7 +46,7 @@ namespace TaskManagerConsole.Repositories
         {
             List<Comment> comments = new List<Comment>();
 
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)

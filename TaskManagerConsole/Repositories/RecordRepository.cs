@@ -7,11 +7,11 @@ namespace TaskManagerConsole.Repositories
 {
     class RecordRepository : BaseRepository<Record>
     {
-        public override string filePath
+        public override string FilePath
         {
             get
             {
-                return base.filePath = "records.txt";
+                return base.FilePath = "records.txt";
             }
         }
 
@@ -21,13 +21,14 @@ namespace TaskManagerConsole.Repositories
 
         protected override Record GetEntity(StreamReader sr)
         {
-            Record record = new Record();
-
-            record.ID = int.Parse(sr.ReadLine());
-            record.TaskID = int.Parse(sr.ReadLine());
-            record.UserID = int.Parse(sr.ReadLine());
-            record.WorkingHours = int.Parse(sr.ReadLine());
-            record.CreateDate = DateTime.Parse(sr.ReadLine());
+            Record record = new Record
+            {
+                ID = int.Parse(sr.ReadLine()),
+                TaskID = int.Parse(sr.ReadLine()),
+                UserID = int.Parse(sr.ReadLine()),
+                WorkingHours = int.Parse(sr.ReadLine()),
+                CreateDate = DateTime.Parse(sr.ReadLine())
+            };
 
             return record;
         }
@@ -45,7 +46,7 @@ namespace TaskManagerConsole.Repositories
         {
             List<Record> records = new List<Record>();
 
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)

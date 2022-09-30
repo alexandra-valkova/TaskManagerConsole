@@ -14,8 +14,7 @@ namespace TaskManagerConsole.Views
 
         public string Choice()
         {
-            string choice = "";
-
+            string choice;
             while (true)
             {
                 choice = Console.ReadLine().ToUpper();

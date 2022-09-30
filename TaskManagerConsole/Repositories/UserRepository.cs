@@ -6,11 +6,11 @@ namespace TaskManagerConsole.Repositories
 {
     public class UserRepository : BaseRepository<User>
     {
-        public override string filePath
+        public override string FilePath
         {
             get
             {
-                return base.filePath = "users.txt";
+                return base.FilePath = "users.txt";
             }
         }
 
@@ -20,11 +20,14 @@ namespace TaskManagerConsole.Repositories
 
         protected override User GetEntity(StreamReader sr)
         {
-            User user = new User();
-            user.ID = int.Parse(sr.ReadLine());
-            user.Username = sr.ReadLine();
-            user.Password = sr.ReadLine();
-            user.IsAdmin = Convert.ToBoolean(sr.ReadLine());
+            User user = new User
+            {
+                ID = int.Parse(sr.ReadLine()),
+                Username = sr.ReadLine(),
+                Password = sr.ReadLine(),
+                IsAdmin = Convert.ToBoolean(sr.ReadLine())
+            };
+
             return user;
         }
 
@@ -38,7 +41,7 @@ namespace TaskManagerConsole.Repositories
 
         public User GetByUsernameAndPassword(string username, string password)
         {
-            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             using (StreamReader sr = new StreamReader(fs))
             {
                 while (!sr.EndOfStream)
