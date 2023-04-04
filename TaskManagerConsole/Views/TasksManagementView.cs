@@ -32,7 +32,6 @@ namespace TaskManagerConsole.Views
             task.ResponsibleID = int.Parse(Console.ReadLine());
 
             task.CreateDate = DateTime.Now;
-
             task.LastEditDate = DateTime.Now;
 
             Console.Write("Status (InProgress or Finished): ");
@@ -86,5 +85,10 @@ namespace TaskManagerConsole.Views
             TasksDetailsView taskDetails = new TasksDetailsView(Entity);
             taskDetails.Show();
         }
+
+        //protected override void Exit()
+        //{
+        //    base.Exit();
+        //}
     }
 }
