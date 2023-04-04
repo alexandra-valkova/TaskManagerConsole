@@ -85,5 +85,10 @@ namespace TaskManagerConsole.Views
             TasksDetailsView taskDetails = new TasksDetailsView(Entity);
             taskDetails.Show();
         }
+
+        //protected override void Exit()
+        //{
+        //    base.Exit();
+        //}
     }
 }

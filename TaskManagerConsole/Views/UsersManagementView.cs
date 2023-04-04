@@ -55,5 +55,11 @@ namespace TaskManagerConsole.Views
 
             Console.WriteLine("########################################");
         }
+
+        //protected override void Exit()
+        //{
+        //    AdminView admin = new AdminView();
+        //    admin.Show();
+        //}
     }
 }
