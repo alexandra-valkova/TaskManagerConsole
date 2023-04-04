@@ -26,7 +26,7 @@ namespace TaskManagerConsole.Views
                 else
                 {
                     Console.WriteLine("Invalid choice!");
-                } 
+                }
             }
 
             return choice;

@@ -55,7 +55,7 @@ namespace TaskManagerConsole.Repositories
 
                     if (record.TaskID == taskID)
                     {
-                        records.Add(record); 
+                        records.Add(record);
                     }
                 }
             }

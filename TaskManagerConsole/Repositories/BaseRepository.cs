@@ -48,7 +48,7 @@ namespace TaskManagerConsole.Repositories
             }
         }
 
-        public int GetNextID ()
+        public int GetNextID()
         {
             int id = 0;
 
