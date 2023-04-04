@@ -20,8 +20,8 @@ namespace TaskManagerConsole.Views
             Console.Clear();
             Console.WriteLine("Records");
 
-            Console.WriteLine("[L]ist all records");
-            Console.WriteLine("[A]dd record");
+            Console.WriteLine("[L]ist all records:");
+            Console.WriteLine("[A]dd record:");
 
             while (true)
             {
@@ -42,7 +42,7 @@ namespace TaskManagerConsole.Views
                 else
                 {
                     Console.WriteLine("Invalid choice!");
-                } 
+                }
             }
         }
 

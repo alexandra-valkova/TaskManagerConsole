@@ -20,7 +20,7 @@ namespace TaskManagerConsole.Views
             Console.Clear();
             Console.WriteLine("Comments");
 
-            Console.WriteLine("[L]ist comments:");
+            Console.WriteLine("[L]ist all comments:");
             Console.WriteLine("[A]dd comment:");
 
             while (true)
@@ -30,11 +30,13 @@ namespace TaskManagerConsole.Views
                 if (choice == "L")
                 {
                     List();
+                    break;
                 }
 
                 else if (choice == "A")
                 {
                     Add();
+                    break;
                 }
 
                 else
