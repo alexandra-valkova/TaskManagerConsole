@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using TaskManagerConsole.Entities;
-using TaskManagerConsole.Enumerators;
 using TaskManagerConsole.Repositories;
 
 namespace TaskManagerConsole.Views
@@ -9,7 +8,7 @@ namespace TaskManagerConsole.Views
     public abstract class BaseView<T> where T : BaseEntity, new()
     {
         public virtual T Entity { get; set; }
-        
+
         public void Show()
         {
             while (true)
@@ -78,7 +77,7 @@ namespace TaskManagerConsole.Views
                     RenderEntity(entity);
                     Entity = entity;
                     break;
-                } 
+                }
             }
         }
 
@@ -104,7 +103,7 @@ namespace TaskManagerConsole.Views
             Console.Clear();
 
             BaseRepository<T> entityRepo = GetRepo();
-            
+
             Console.Write(typeof(T).Name + " ID: ");
 
             while (true)
@@ -124,7 +123,7 @@ namespace TaskManagerConsole.Views
                     entityRepo.Save(entity);
                     Console.WriteLine(typeof(T).Name + " successfully edited!");
                     break;
-                } 
+                }
             }
 
             Console.ReadKey(true);
@@ -161,7 +160,7 @@ namespace TaskManagerConsole.Views
             {
                 Console.Clear();
 
-                Console.WriteLine(typeof(T).Name + "Management");
+                Console.WriteLine(typeof(T).Name + " Management");
 
                 Console.WriteLine("[L]ist all:");
                 Console.WriteLine("[V]iew:");
@@ -201,5 +200,15 @@ namespace TaskManagerConsole.Views
         protected abstract T GetEntity(T entity);
 
         protected abstract T EditEntity(T entity);
+    }
+
+    public enum Menu
+    {
+        List = 1,
+        View = 2,
+        Add = 3,
+        Edit = 4,
+        Delete = 5,
+        Exit = 6
     }
 }
