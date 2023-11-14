@@ -1,6 +1,6 @@
 # Task Manager : Console App
 
-A task manager :memo: console application (.NET 7).
+A task manager :memo: console application (.NET 8).
 
 Text files are used for storing and retrieving data :page_facing_up:
 
