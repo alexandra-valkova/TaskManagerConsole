@@ -5,11 +5,6 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagerConsole", "TaskManagerConsole\TaskManagerConsole.csproj", "{471619DC-29D1-444F-A456-BE7606F122C5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D88191F-9C78-4020-BC53-853CA7AEBFBE}"
-	ProjectSection(SolutionItems) = preProject
-		Task.txt = Task.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
